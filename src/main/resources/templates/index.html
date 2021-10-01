@@ -134,7 +134,7 @@
 <!--background tag for home page-->
 <div class="jumbotron" th:replace="fragments/jumbotron :: jumbotron">
     <div class="container">
-        <h1 th:text="#{index.courses.headline}">Spring Framework Omid Ashouri - jumbotron</h1>
+        <h1>Spring Framework Omid Ashouri - jumbotron</h1>
         <p class="lead" th:text="#{index.courses.tagline}">Online Courses for Spring Framework</p>
     </div>
 </div>
@@ -143,11 +143,47 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1>Spring Framework Omid Ashouri Courses</h1>
+            <h1 th:text="#{index.courses.headline}">Course Headline</h1>
+        </div>
+    </div>
+
+<!--    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+        </tr>
+        <tr th:each="product : ${products}">
+            <td th:text="${product.id}"></td>
+            <td th:text="${product.courseName}"></td>
+        </tr>
+    </table>-->
+
+    <div class="row course-list list">
+        <div class='row course-list list'>
+<!--            it stands for iterator -->
+            <div th:each="product,it : ${products}">
+                <div th:if="${(it.count gt 0 and it.count lt 4)}">
+                    <div th:replace="fragments/productdiv :: productdiv">
+
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
     <div class="row course-list list">
+        <div class='row course-list list'>
+            <div th:each="product,it : ${products}">
+                <div th:if="${(it.count gt 3 and it.count lt 7)}">
+                    <div th:replace="fragments/productdiv :: productdiv">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row course-list list" th:remove="all">
         <!--we have 12/4=3 columns-->
         <div class="col-md-4">
             <div class="course-listing">
@@ -265,7 +301,7 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row" th:remove="all">
         <div class="col-md-4">
             <div class="course-listing">
                 <div class="row">
