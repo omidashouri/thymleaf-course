@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>Spring Framework Omid Ashouri Courses</title>
+    <title th:text="#{index.page.title}"></title>
 
     <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" media="screen"
       th:href="@{/css/bootstrap-3.3.4-dist/css/bootstrap.min.css}">
@@ -134,8 +134,8 @@
 <!--background tag for home page-->
 <div class="jumbotron">
     <div class="container">
-        <h1>Spring Framework Omid Ashouri</h1>
-        <p class="lead">Online Courses for Spring Framework</p>
+        <h1 th:text="#{index.courses.headline}">Spring Framework Omid Ashouri</h1>
+        <p class="lead" th:text="#{index.courses.tagline}">Online Courses for Spring Framework</p>
     </div>
 </div>
 
