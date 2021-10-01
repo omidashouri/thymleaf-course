@@ -133,9 +133,9 @@
 </head>
 <body>
 
-<div class="jumbotron">
+<div class="jumbotron" th:replace="fragments/jumbotron :: jumbotron">
   <div class="container">
-    <h1>Spring Framework Omid Ashouri</h1>
+    <h1>Spring Framework Omid Ashouri - jumbotron</h1>
     <p class="lead" th:text="#{index.courses.tagline}">Online Courses for Spring Framework</p>
   </div>
 </div>
@@ -175,6 +175,10 @@
       <button class="btn-success" th:text="#{button.buy.now}">Buy Now!</button>
     </div>
   </div>
+</div>
+
+<div class="container" th:replace="fragments/footer :: footer">
+  <p>footer</p>
 </div>
 
 </body>

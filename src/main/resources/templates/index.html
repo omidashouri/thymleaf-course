@@ -132,9 +132,9 @@
 </head>
 <body>
 <!--background tag for home page-->
-<div class="jumbotron">
+<div class="jumbotron" th:replace="fragments/jumbotron :: jumbotron">
     <div class="container">
-        <h1 th:text="#{index.courses.headline}">Spring Framework Omid Ashouri</h1>
+        <h1 th:text="#{index.courses.headline}">Spring Framework Omid Ashouri - jumbotron</h1>
         <p class="lead" th:text="#{index.courses.tagline}">Online Courses for Spring Framework</p>
     </div>
 </div>
@@ -379,6 +379,10 @@
             </div>
         </div>
     </div>
+</div>
+
+<div class="container" th:replace="fragments/footer :: footer">
+    <p>footer</p>
 </div>
 
 </body>
